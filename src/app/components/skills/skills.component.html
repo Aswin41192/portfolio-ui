@@ -1,0 +1,24 @@
+<div class="container py-5">
+  <div>
+    <h2>SKILLS</h2>
+    <hr/>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-md-12 col-xs-1 my-2" *ngFor="let skill of skills">
+      <mat-card>
+        <mat-card-header class="d-flex justify-content-center">
+          <strong > {{ skill.name | uppercase}} </strong>
+        </mat-card-header>
+        <hr/>
+        <mat-card-content>
+          <div class="d-flex justify-content-center p-3">
+            <img mat-card-md-image [src]="skill.logoPath">
+          </div>
+          <div class="d-flex justify-content-center">
+           <p> {{ skill.description}} </p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
