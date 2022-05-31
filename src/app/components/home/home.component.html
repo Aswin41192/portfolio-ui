@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="!loading">
   <div class="row d-flex justify-content-center my-5 py-5">
     <mat-card class="col-sm-6">
       <mat-card-header>
@@ -7,34 +7,29 @@
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <ul class="p-3">
-          <li>I'm a Full Stack Developer with 8 years of experience.</li>
-          <li>
-            Acquired skills in Java, Spring, Spring Boot, Angular & Bootstrap.
-          </li>
-          <li>Exposure to Cloud & Microservices.</li>
+        <ul class="p-3" >
+          <li *ngFor="let userDescription of user?.userDescriptions">{{ userDescription['description'] }}</li>
         </ul>
-        <mat-card-actions>
-          <mat-action-list class="row d-flex justify-content-end">
-            <div class="col-4 d-flex justify-content-end">
-              <div class="col-4">
-                <a href="mailto:aswin.sankaranarayanan@gmail.com">
+        <mat-card-actions class="row">
+          <mat-action-list class="d-flex justify-content-end">
+            <div class="row col-sm-6 col-xs-6 d-flex justify-content-end">
+              <div class="col-sm-3 col-xs-3">
+                <a href="mailto:{{user.email}}">
                   <img
-                    class="w-75 img img-thumbnail"
+                    class="img img-fluid w-75"
                     src="../../../assets/gmail.png"
                 /></a>
               </div>
-              <div class="col-4"><a target="_blank" href="https://www.linkedin.com/in/aswin-sankarananrayanan/">
+              <div class="col-sm-3 col-xs-3">
+                <a target="_blank" href="{{user?.linkedinProfile}}">
                 <img
-                  class="w-75 img img-thumbnail"
+                  class="img img-fluid w-75"
                   src="../../../assets/linkedin.png"
               /></a></div>
             </div>
-
           </mat-action-list>
         </mat-card-actions>
       </mat-card-content>
-
     </mat-card>
   </div>
 </div>
