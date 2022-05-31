@@ -18,7 +18,7 @@ export class ExperienceComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    this.httpClient.get<Experience[]>(`${BASE_URL}/api/experience`)
+    this.httpClient.get<Experience[]>(`${BASE_URL}/api/users/experiences`)
     //  .pipe(map(experiences => experiences[0]))
       .subscribe(experiences => {
         this.experiences = experiences;
